@@ -1,2 +1,4 @@
 class ApplicationController < ActionController::Base
-end
+    protect_from_forgery with: :exception
+    add_flash_types :success, :danger
+  end
