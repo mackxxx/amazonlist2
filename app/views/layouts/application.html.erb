@@ -6,24 +6,18 @@
      <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Amazonlist</title>
     <%= csrf_meta_tags %>
-  
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
- 
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-  
+   
   </head>
-   <body>
+  <body>
     <%= render 'layouts/navbar' %>
     <%= yield :cover %> 
     <div class="container">
       <% flash.each do |message_type, message| %>
        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
-       <%= yield %>
-   </div>
+      <%= yield %>
+    </div>
      <%= render 'layouts/footer' %>
   </body>
 </html>
