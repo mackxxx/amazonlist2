@@ -1,12 +1,16 @@
 @charset "utf-8";
 @import "bootstrap"; 
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
 
 body {
   background: #ffffff;
 }
-footer {
+footer {
   margin-top: 40px;
+  position: center;
 }
+
 .navbar-header img {
   margin-top: 5px;
   height: 40px;
@@ -14,4 +18,22 @@ footer {
 
 body {
   background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
+}
+
+.cover .cover-inner {
+  height: 100%;
+  margin: auto;
+  display: table;
+}
+.cover .cover-inner .cover-contents {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  position: relative;
+}
+
+
+.btn-twitter{
+  color:#fff;background-color:#55acee;
+  border-color:rgba(0,0,0,0.2);
 }
