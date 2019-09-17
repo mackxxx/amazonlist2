@@ -4,20 +4,20 @@
 @import 'font-awesome';
 
 body {
-  background: #ffffff;
-}
-footer {
-  margin-top: 40px;
-  position: center;
+  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
 }
 
-.navbar-header img {
+footer {
+  margin-top: 40px;
+}
+
+.navbar{
+  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
+}
+
+.navbar img {
   margin-top: 5px;
   height: 40px;
-}
-
-body {
-  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
 }
 
 .cover .cover-inner {
@@ -25,15 +25,10 @@ body {
   margin: auto;
   display: table;
 }
+
 .cover .cover-inner .cover-contents {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   position: relative;
-}
-
-
-.btn-twitter{
-  color:#fff;background-color:#55acee;
-  border-color:rgba(0,0,0,0.2);
 }
