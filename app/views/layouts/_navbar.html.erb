@@ -1,21 +1,19 @@
 <header>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-left" href="/"><img src="/images/logo.png" alt="RakutenList"></a>
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
+   <span class="navbar-toggler-icon"></span>
+    </button>
+     <a class="navbar-left" href="/"><img src="/images/logo.png" alt="amazonlist2""></a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav">
+        <li class="nav-item ">
+         <%= link_to "新規登録", signup_path,class: 'btn btn-inverse' %>
+        </li>
+         <li class="nav-item">
+          <li><a href="#">ログイン</a></li>
+         </li>
+       </ul>
       </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to '新規登録', signup_path %></li>
-        <li><a href="#">ログイン</a></li>
-      </ul>
-      </div>
-    </div>
-  </nav>
+     </nav>
 </header>
+

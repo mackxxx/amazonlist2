@@ -24,6 +24,9 @@
 /config/master.key
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 270614954659bc66bd7dcecc185a60e128b26e5e
 /public/packs
 /public/packs-test
 /node_modules
@@ -32,8 +35,11 @@ yarn-debug.log*
 .yarn-integrity
 
 .vscode/
+<<<<<<< HEAD
 =======
 >>>>>>> 1a3db44d71b9c18ce14d9a67b4c3909067ea656c
+=======
+>>>>>>> 270614954659bc66bd7dcecc185a60e128b26e5e
 *.rbc
 capybara-*.html
 .rspec
