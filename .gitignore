@@ -23,6 +23,7 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+<<<<<<< HEAD
 /public/packs
 /public/packs-test
 /node_modules
@@ -31,6 +32,8 @@ yarn-debug.log*
 .yarn-integrity
 
 .vscode/
+=======
+>>>>>>> 1a3db44d71b9c18ce14d9a67b4c3909067ea656c
 *.rbc
 capybara-*.html
 .rspec
