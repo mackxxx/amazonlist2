@@ -23,12 +23,12 @@ module Amazonlist2
   class Application < Rails::Application
     config.load_defaults 6.0
     config.i18n.default_locale = :ja
-    config.generators.system_tests = nil
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| html_tag }
     config.generators do |g|
       g.stylesheets false  
       g.javascripts false   
       g.helper false       
+      g.system_tests nil
       g.test_framework :rspec,
                         fixtures: true,
                         view_specs: false,
