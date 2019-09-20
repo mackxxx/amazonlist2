@@ -28,7 +28,6 @@ module Amazonlist2
       g.stylesheets false  
       g.javascripts false   
       g.helper false       
-      g.system_tests nil
       g.test_framework :rspec,
                         fixtures: true,
                         view_specs: false,
