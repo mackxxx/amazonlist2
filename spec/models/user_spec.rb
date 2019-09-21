@@ -14,14 +14,15 @@ RSpec.describe User, type: :model do
 
   context "when user is invalid" do
     it "値が空白" do
+      @user.name = "  "
       expect(@user).to be_invalid
     end
   end
 
   context "when email format is invalid" do
     it "emailのvalidateが正しく機能しているか" do
-      invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.foo@bar_baz.com foo@bar+baz.com foo@bar..com]
-      invalid_addresses.each do |invalid_address|
+      addresses = %w[user@example,com user_at_foo.org user.name@example.foo@bar_baz.com foo@bar+baz.com foo@bar..com]
+      addresses.each do |invalid_address|
         expect(FactoryBot.build(:user, email: invalid_address)).to be_invalid
       end
     end
@@ -47,7 +48,6 @@ RSpec.describe User, type: :model do
     expect(@user.reload.email).to eq "foo@example.com"
   end
 
- #パスワードの長さテスト
   describe "password length" do
    
     context "パスワードが６桁の時" do
