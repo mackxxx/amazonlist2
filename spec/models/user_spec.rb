@@ -30,9 +30,7 @@ RSpec.describe User, type: :model do
 
   context "when email addresses should be unique" do
     it "一意性が正しく機能しているか" do
-     
       duplicate_user = @user.dup
-      
       duplicate_user.email = @user.email.upcase
       @user.save!
       expect(duplicate_user).to be_invalid
@@ -40,16 +38,12 @@ RSpec.describe User, type: :model do
   end
 
   it "emailを小文字に変換後の値と大文字を混ぜて登録されたアドレスが同じか" do
-    
     @user.email = "Foo@ExAMPle.CoM"
     @user.save!
-
-    
     expect(@user.reload.email).to eq "foo@example.com"
   end
 
   describe "password length" do
-   
     context "パスワードが６桁の時" do
       it "正しい" do
         @user = FactoryBot.build(:user, password: "a" * 6, password_confirmation: "a" * 6)
