@@ -21,8 +21,8 @@ RSpec.describe User, type: :model do
 
   context "when email format is invalid" do
     it "emailのvalidateが正しく機能しているか" do
-      addresses = %w[user@example,com user_at_foo.org user.name@example.foo@bar_baz.com foo@bar+baz.com foo@bar..com]
-      addresses.each do |invalid_address|
+      address = %w[user@example,com user_at_foo.org user.name@example.foo@bar_baz.com foo@bar+baz.com foo@bar..com]
+      address.each do |invalid_address|
         expect(FactoryBot.build(:user, email: invalid_address)).to be_invalid
       end
     end
