@@ -35,7 +35,7 @@ RSpec.describe User, type: :model do
     end
   end
 
-  it "emailを小文字に変換後の値と大文字を混ぜて登録されたアドレスが同じになる" do
+  it "emailを小文字に変換後の値と大文字を混ぜて登録されたアドレスが同一" do
     user.email = "Foo@ExAMPle.CoM"
     user.save!
     expect(user.reload.email).to eq "foo@example.com"
