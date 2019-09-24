@@ -21,7 +21,7 @@ RSpec.describe User, type: :model do
     it "emailのvalidateが正しく機能している" do
       address = %w[user@example,com user_at_foo.org user.name@example.foo@bar_baz.com foo@bar+baz.com foo@bar..com]
       address.each do |invalid_address|
-        expect(build(:user, email: invalid_address)).to be_invalid
+      expect(build(:user, email: invalid_address)).to be_invalid
       end
     end
   end
