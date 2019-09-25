@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +9,17 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
+
   <body>
     <%= render 'layouts/navbar' %>
-    <%= yield :cover %> 
+    <%= yield :cover %>
     <div class="container">
       <% flash.each do |message_type, message| %>
-        <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
+      <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
       <%= yield %>
     </div>
     <%= render 'layouts/footer' %>
   </body>
+
 </html>
