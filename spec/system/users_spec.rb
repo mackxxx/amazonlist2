@@ -87,8 +87,8 @@ RSpec.describe "Users", type: :system do
      
     context "名前とemailだけ入力されている場合" do
       let(:name) { "Yamada Taro" }
-      let(:email) { nil }
-      let(:password) { "123abc" }
+      let(:email) { "yamada@test.ne.jp" }
+      let(:password) { nil }
       let(:password_confirmation) { nil }
       
       it "エラーメッセージが表示される" do
