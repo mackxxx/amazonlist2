@@ -41,110 +41,11 @@ RSpec.describe "Users", type: :system do
       end
     end
     
-    context "名前だけ入力されている場合" do
-      let(:name) { "Sato hanako" }
-      let(:email) { nil }
-      let(:password) { nil }
-      let(:password_confirmation) { nil }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-    
-    context "emailだけ入力されている場合" do
-      let(:name) { nil }
-      let(:email) { "suzuki@abc.gmail.com" }
-      let(:password) { nil }
-      let(:password_confirmation) { nil }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-   
-    context "パスワードだけ入力されている場合" do
-      let(:name) { nil }
-      let(:email) { nil }
-      let(:password) { "abcdefg" }
-      let(:password_confirmation) { nil }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-     
-    context "パスワード(確認)だけ入力されている場合" do
+    context "全て入力されていない場合" do
       let(:name) { nil }
       let(:email) { nil }
       let(:password) { nil }
-      let(:password_confirmation) { "123456" }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-     
-    context "名前とemailだけ入力されている場合" do
-      let(:name) { "Yamada Taro" }
-      let(:email) { "yamada@test.ne.jp" }
-      let(:password) { nil }
       let(:password_confirmation) { nil }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-     
-    context "名前とパスワードだけ入力されている場合" do
-      let(:name) { "Kato ichiro" }
-      let(:email) { nil }
-      let(:password) { "1qaz2wsx" }
-      let(:password_confirmation) { nil }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-    
-    context "名前とパスワード(確認)だけ入力されている場合" do
-      let(:name) { "hayshi jiro" }
-      let(:email) { nil }
-      let(:password) { nil }
-      let(:password_confirmation) { "example" }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-  
-    context "emailとパスワードだけ入力されている場合" do
-      let(:name) { nil }
-      let(:email) { "123@d.com" }
-      let(:password) { "1234567" }
-      let(:password_confirmation) { nil }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-
-    context "emailとパスワード(確認)だけ入力されている場合" do
-      let(:name) { nil }
-      let(:email) { "exmple@example.co.jp" }
-      let(:password) { nil }
-      let(:password_confirmation) { "12121212" }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-      end
-    end
-
-    context "パスワードとパスワード(確認)だけ入力されている場合" do
-      let(:name) { nil }
-      let(:email) { nil }
-      let(:password) { "abc123" }
-      let(:password_confirmation) { "abc123" }
       
       it "エラーメッセージが表示される" do
         expect(page).to have_content "ユーザの登録に失敗しました。"
@@ -158,7 +59,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { "test123" }
       
       it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
+        expect(page).to have_content "Nameを入力してください"
       end
     end
 
@@ -169,7 +70,8 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { "aiueokaki" }
       
       it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
+        expect(page).to have_content "Emailを入力してください"
+        expect(page).to have_content "Emailは不正な値です"
       end
     end
     
@@ -180,7 +82,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { "katoyuki" }
       
       it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
+        expect(page).to have_content "Passwordを入力してください"
       end
     end
 
@@ -191,7 +93,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { nil }
       
       it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
+        expect(page).to have_content "Password confirmationとPasswordの入力が一致しません"
       end
     end
   end
