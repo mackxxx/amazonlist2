@@ -49,6 +49,10 @@ RSpec.describe "Users", type: :system do
       
       it "エラーメッセージが表示される" do
         expect(page).to have_content "ユーザの登録に失敗しました。"
+        expect(page).to have_content "Nameを入力してください"
+        expect(page).to have_content "Emailを入力してください"
+        expect(page).to have_content "Emailは不正な値です"
+        expect(page).to have_content "Passwordを入力してください"
       end
     end
     
@@ -59,6 +63,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { "test123" }
       
       it "エラーメッセージが表示される" do
+        expect(page).to have_content "ユーザの登録に失敗しました。"
         expect(page).to have_content "Nameを入力してください"
       end
     end
@@ -70,6 +75,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { "aiueokaki" }
       
       it "エラーメッセージが表示される" do
+        expect(page).to have_content "ユーザの登録に失敗しました。"
         expect(page).to have_content "Emailを入力してください"
         expect(page).to have_content "Emailは不正な値です"
       end
@@ -82,6 +88,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { "katoyuki" }
       
       it "エラーメッセージが表示される" do
+        expect(page).to have_content "ユーザの登録に失敗しました。"
         expect(page).to have_content "Passwordを入力してください"
       end
     end
@@ -93,6 +100,7 @@ RSpec.describe "Users", type: :system do
       let(:password_confirmation) { nil }
       
       it "エラーメッセージが表示される" do
+        expect(page).to have_content "ユーザの登録に失敗しました。"
         expect(page).to have_content "Password confirmationとPasswordの入力が一致しません"
       end
     end
