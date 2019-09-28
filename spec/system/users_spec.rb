@@ -41,7 +41,7 @@ RSpec.describe "Users", type: :system do
       end
     end
     
-    context "全て入力されていない場合" do
+    context "全ての項目が入力されていない場合" do
       let(:name) { nil }
       let(:email) { nil }
       let(:password) { nil }
