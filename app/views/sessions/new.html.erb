@@ -1,0 +1,25 @@
+<article class="card-body mx-auto" style="max-width: 400px;">
+  <h4 class="card-title mt-3 text-center">ログイン</h4>
+  <%= form_with model: @user do |f| %>
+    <form>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+        </div>
+        <%= f.text_field :email, class: 'form-control', placeholder: "メールアドレス" %>
+      </div>
+      <div class="form-group input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+        </div>
+        <%= f.password_field :password, class: 'form-control', placeholder: "パスワード" %>
+      </div>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span> ログイン情報を記憶させる</span>
+      <% end %>
+      <%= f.submit 'ログイン', class: 'btn btn-info btn-block' %>
+      <p>新規登録がお済みでない場合はこちら⇒ <%= link_to "新規登録", signup_path %></p>
+    </form>
+  <% end %>
+</article>
