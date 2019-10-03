@@ -5,7 +5,7 @@
     </button>
     <a class="navbar-left" href="/"><img src="/images/logo.png" alt="AmazonList""></a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+      <div class="navbar-nav">
         <% if logged_in? %>
           <li>
           　<i class="fas fa-arrow-alt-circle-down"></i>
@@ -19,41 +19,40 @@
             <i class="fas fa-hands-helping"></i>
             <a href="#">フォロー/フォロワー一覧</a>            
           </li>
-        <div class="dropdown">
-        <i class="fas fa-chart-line"></i>
+          <li>
+            <i class="fas fa-running"></i>
+            <a href="#">今欲しいランキング</a>
+          </li>
+          <li>
+            <i class="fas fa-chart-bar"></i>
+            <a href="#">後で欲しいランキング</a>
+          </li>
+          <div class="dropdown">
           <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ランキング
-          </a>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">後で欲しいものランキング</a>
-            <a class="dropdown-item" href="#">後で欲しいものランキング</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
             <span class="gravatar">
               <img src="<%= gravatar_url(current_user, size: 20) %>" alt="" class="img-circle">
             </span>
-          <%= current_user.name %>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-          <a class="dropdown-item" href="#">メニュー1</a>
-          <%= link_to "マイページ", user_path(current_user) %>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">
-          <%= link_to "ログアウト", logout_path, method: :delete %>
+            <%= current_user.name %>
           </a>
-          <% else %>
-         <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
-          <%= link_to "新規登録", signup_path,class: 'btn btn-primary' %>
-          </li>
-          <li class="nav-item">
-          <%= link_to "ログイン", login_path,class: 'btn btn-primary' %>
-        </li>
-        </ul>
-       <% end %>
-      </ul>
+          <div class="dropdown">
+            <li>
+            <i class="far fa-address-card"></i>
+            <%= link_to "マイページ", user_path(current_user) %>
+            </li>
+            <li>
+            <i class="fas fa-sign-out-alt"></i>
+            <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li> 
+          </div>
+        <% else %>
+          <div class="nav-item ">
+            <%= link_to "新規登録", signup_path,class: 'btn btn-primary' %>
+          </div>
+          <div class="nav-item">
+            <%= link_to "ログイン", login_path,class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
     </div>
-      <%= link_to 'ログアウト', logout_path, method: :delete %>
   </nav>
 </header>

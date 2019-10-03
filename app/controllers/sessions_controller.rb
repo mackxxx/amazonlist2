@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       redirect_to user
+      flash[:success] = "ログインしました。"
     else
       flash.now[:danger] = 'メールとパスワードの組み合わせが間違っています！'
       render 'new'
