@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  
+  skip_before_action :authenticate_user, only: [:new, :create, :destroy] 
+
   def new
   end
 
@@ -7,8 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       log_in user
-      redirect_to user
-      flash[:success] = "ログインしました。"
+      redirect_to user, success: "ログインしました。"
     else
       flash.now[:danger] = 'メールとパスワードの組み合わせが間違っています！'
       render 'new'
@@ -17,7 +17,6 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    flash[:success] = "ログアウトしました。"
-    redirect_to root_url
+    redirect_to root_url, success: "ログアウトしました。"
   end
 end
