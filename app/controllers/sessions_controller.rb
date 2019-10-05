@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in user
       redirect_to user, success: "ログインしました。"
     else
-      flash.now[:danger] = 'メールとパスワードの組み合わせが間違っています！'
+      flash.now[:danger] = "メールとパスワードの組み合わせが間違っています！"
       render 'new'
     end
   end
