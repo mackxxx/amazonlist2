@@ -1,6 +1,7 @@
+@charset "utf-8";
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
-@charset "utf-8";
+
 
 body {
   background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
@@ -54,17 +55,5 @@ footer {
   top: 55%;
   left: 0;
   z-index: 1;
-}
-
-.btn-twitter {
-  color: #fff;
-  background-color: #55acee;
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
-.fa-twitter {
-  color: #fff;
-  background-color: #55acee;
-  border-color: rgba(0, 0, 0, 0.2);
-  padding: 10px;
-}
+}@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
