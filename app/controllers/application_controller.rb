@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   
   add_flash_types :success, :danger
   before_action :authenticate_user
-  helper_method :log_in(user), :current_user, :logged_in?, :log_out
+  helper_method :current_user, :logged_in?
 
   private
     def authenticate_user
