@@ -22,41 +22,16 @@ RSpec.describe "Sessions", type: :system do
       let(:password) { "password" }
 
       it "ログインできる" do
-        expect(page).to have_content "ログインに成功しました。"
+        expect(page).to have_content "ログインしました。"
       end
     end
     
-    context "全ての項目が入力されていない場合" do
-      let(:email) { nil }
+    context "不正な値を入力した時" do
+      let(:email) { "aiueokaki" }
       let(:password) { nil }
       
       it "エラーメッセージが表示される" do
         expect(page).to have_content "ログインに失敗しました。"
-        expect(page).to have_content "Nameを入力してください"
-        expect(page).to have_content "Emailを入力してください"
-        expect(page).to have_content "Emailは不正な値です"
-        expect(page).to have_content "Passwordを入力してください"
-      end
-    end
-    
-    context "emailのみ入力されていない場合" do
-      let(:email) { "yamada@yahoo.co.jp" }
-      let(:password) { "test123" }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-        expect(page).to have_content "Nameを入力してください"
-      end
-    end
-
-    context "パスワードのみ入力されていない場合" do
-      let(:email) { nil }
-      let(:password) { "aiueokaki" }
-      
-      it "エラーメッセージが表示される" do
-        expect(page).to have_content "ユーザの登録に失敗しました。"
-        expect(page).to have_content "Emailを入力してください"
-        expect(page).to have_content "Emailは不正な値です"
       end
     end
   end
