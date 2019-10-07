@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, except: [:show] 
+  skip_before_action :authenticate_user, only: [:new, :create, :update, :edit] 
   
   def show
     @user = User.find(params[:id])
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user
-      redirect_to @user, success:  "登録に成功しました。"
+      redirect_to @user, success: "登録に成功しました。"
     else
       flash.now[:danger] = "ユーザの登録に失敗しました。"
       render :new

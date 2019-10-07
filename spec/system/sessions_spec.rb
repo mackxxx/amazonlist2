@@ -18,6 +18,7 @@ RSpec.describe "Sessions", type: :system do
       fill_in "パスワード", with: password
       click_button "ログイン"
     end
+    
 
     context "正しい値を入力した場合" do
       let(:email) { "sample@example.com" }
