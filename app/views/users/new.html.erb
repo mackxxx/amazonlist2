@@ -1,6 +1,6 @@
 <article class="card-body mx-auto" style="max-width: 400px;">
   <h4 class="card-title mt-3 text-center">新規登録</h4>
-  <%= form_with model: @user do |f| %>
+  <%= form_with model: @user, local: true do |f| %>
     <%= render 'shared/error_messages' %>
     <form>
       <div class="form-group input-group">
