@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :system do
-   context "ログインをクリック" do
+
+  let(:user) { create :user }
+
+  context "ログインをクリック" do
     it "ログインページに遷移" do
       visit root_path
       click_on "ログイン"
@@ -18,7 +21,7 @@ RSpec.describe "Sessions", type: :system do
     end
 
     context "正しい値を入力した場合" do
-      let(:email) { "taro@example.com" }
+      let(:email) { "sample@example.com" }
       let(:password) { "password" }
 
       it "ログインできる" do
