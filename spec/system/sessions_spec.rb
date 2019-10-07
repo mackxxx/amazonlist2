@@ -2,8 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "Sessions", type: :system do
 
-  let(:user) { create :user }
-
   context "ログインをクリック" do
     it "ログインページに遷移" do
       visit root_path
@@ -14,6 +12,7 @@ RSpec.describe "Sessions", type: :system do
 
   describe "ログイン" do
     before do
+      user = create(:user, email: "sample@example.com", password: "password") 
       visit login_path
       fill_in "メールアドレス", with: email
       fill_in "パスワード", with: password
