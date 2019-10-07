@@ -31,7 +31,8 @@ RSpec.describe "Sessions", type: :system do
       let(:password) { nil }
       
       it "エラーメッセージが表示される" do
-        expect(page).to have_content "ログインに失敗しました。"
+        expect(page).to have_content "メールとパスワードの組み合わせが間違っています！"
       end
     end
   end
+end
