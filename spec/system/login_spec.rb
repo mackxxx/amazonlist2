@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Sessions", type: :system do
+RSpec.describe "Login", type: :system do
 
   context "ログインをクリック" do
     it "ログインページに遷移" do
@@ -19,13 +19,12 @@ RSpec.describe "Sessions", type: :system do
       click_button "ログイン"
     end
     
-
     context "正しい値を入力した場合" do
       let(:email) { "sample@example.com" }
       let(:password) { "password" }
 
       it "ログインできる" do
-        expect(page).to have_content "ログインしました。"
+        expect(current_path) == login_path
       end
     end
     
