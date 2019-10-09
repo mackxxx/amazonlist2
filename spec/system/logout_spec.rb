@@ -13,9 +13,6 @@ RSpec.describe "Logout", type: :system do
     end
     
     context "ログアウト" do
-      let(:email) { "sample@example.com" }
-      let(:password) { "password" }
-
       it "ログアウトできる" do
         visit root_path
         click_link "ログアウト"

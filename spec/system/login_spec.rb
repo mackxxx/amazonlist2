@@ -21,9 +21,6 @@ RSpec.describe "Login", type: :system do
     end
     
     context "正しい値を入力した場合" do
-      let(:email) { "sample@example.com" }
-      let(:password) { "password" }
-
       it "ログインできる" do
         visit login_path
         click_on "ログイン"
