@@ -6,13 +6,13 @@ RSpec.describe "Logout", type: :system do
     it "ログインページに遷移" do
       visit root_path
       click_on "ログイン"
-      expect(page).to have_content("ログイン")
+      expect(current_path).to eq login_path
     end
   end
 
   describe "ログアウト" do
     before do
-      user = create(:user, email: "sample@example.com", password: "password") 
+      create(:user, email: "sample@example.com", password: "password") 
       visit login_path
       fill_in "メールアドレス", with: email
       fill_in "パスワード", with: password
@@ -26,7 +26,7 @@ RSpec.describe "Logout", type: :system do
       it "ログアウトできる" do
         visit root_path
         click_link "ログアウト"
-        expect(current_path) == root_path
+        expect(current_path).to eq root_path
       end
     end
   end
