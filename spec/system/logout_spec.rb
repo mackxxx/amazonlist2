@@ -31,5 +31,3 @@ RSpec.describe "Logout", type: :system do
     end
   end
 end
-  
-     
