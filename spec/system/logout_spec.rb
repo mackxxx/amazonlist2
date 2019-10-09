@@ -12,7 +12,7 @@ RSpec.describe "Logout", type: :system do
       click_button "ログイン"
     end
     
-    context "ログアウト" do
+    context "ログアウトを試みた場合" do
       it "ログアウトできる" do
         visit root_path
         click_link "ログアウト"
