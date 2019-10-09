@@ -11,11 +11,12 @@ RSpec.describe "Login", type: :system do
   end
 
   describe "ログイン" do
+    let(:user) { create:user }
+    
     before do
-      create(:user, email: "sample@example.com", password: "password") 
       visit login_path
-      fill_in "メールアドレス", with: email
-      fill_in "パスワード", with: password
+      fill_in "メールアドレス", with: user.email
+      fill_in "パスワード", with: user.password
       click_button "ログイン"
     end
     
@@ -35,6 +36,8 @@ RSpec.describe "Login", type: :system do
       let(:password) { nil }
       
       it "エラーメッセージが表示される" do
+        visit login_path
+        click_on "ログイン"
         expect(page).to have_content "メールとパスワードの組み合わせが間違っています！"
       end
     end
