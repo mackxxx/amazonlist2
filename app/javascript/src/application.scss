@@ -1,7 +1,7 @@
 @charset "utf-8";
-@import "bootstrap"; 
-@import 'font-awesome-sprockets';
-@import 'font-awesome';
+@import '~bootstrap/scss/bootstrap';
+@import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
 
 body {
   background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
@@ -11,7 +11,7 @@ footer {
   margin-top: 40px;
 }
 
-.navbar{
+.navbar {
   background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
 }
 
@@ -39,12 +39,14 @@ footer {
   margin-top: 15px;
   margin-bottom: 15px;
 }
+
 .divider-text span {
   padding: 7px;
   font-size: 12px;
-  position: relative;   
+  position: relative;
   z-index: 2;
 }
+
 .divider-text:after {
   content: "";
   position: absolute;
@@ -53,13 +55,5 @@ footer {
   top: 55%;
   left: 0;
   z-index: 1;
-}
-.btn-twitter{
-  color:#fff;background-color:#55acee;
-  border-color:rgba(0,0,0,0.2);
-}
-.fa-twitter{
-  color:#fff;background-color:#55acee;
-  border-color:rgba(0,0,0,0.2);
-  padding: 10px;
-}
+}@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";

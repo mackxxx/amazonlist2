@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
-  
   let(:user) { build :user }
   
   context "新規登録をクリック" do
@@ -12,10 +11,10 @@ RSpec.describe "Users", type: :system do
     end
   end
  
-  context "amazonListを始めるをクリック" do
+  context "AmazonListを始めるをクリック" do
     it "新規登録ページに遷移" do
       visit root_path
-      click_on "amazonListを始める"
+      click_on "AmazonListを始める"
       expect(page).to have_content("新規登録")
     end
   end

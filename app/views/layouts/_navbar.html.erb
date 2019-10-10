@@ -3,16 +3,57 @@
     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-left" href="/"><img src="/images/logo.png" alt="amazonlist2""></a>
+    <a class="navbar-left" href="/"><img src="/images/logo.png" alt="AmazonList"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item ">
-          <%= link_to "新規登録", signup_path,class: 'btn btn-inverse' %>
-        </li>
-        <li class="nav-item">
-          <li><a href="#">ログイン</a></li>
-        </li>
-      </ul>
+      <div class="navbar-nav">
+        <% if logged_in? %>
+          <li>
+          　<i class="fas fa-arrow-alt-circle-down"></i>
+            <a href="#">アイテムを追加</a>　　　　　　　
+          </li>
+          <li>
+          　<i class="fas fa-users"></i>
+            <a href="#">ユーザ一覧</a>
+          </li>
+          <li>
+            <i class="fas fa-hands-helping"></i>
+            <a href="#">フォロー/フォロワー一覧</a>            
+          </li>
+          <li>
+            <i class="fas fa-running"></i>
+            <a href="#">今欲しいランキング</a>
+          </li>
+          <li>
+            <i class="fas fa-chart-bar"></i>
+            <a href="#">後で欲しいランキング</a>
+          </li>
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="gravatar">
+                <img src="<%= gravatar_url(current_user, size: 20) %>" alt="" class="img-circle">
+              </span>
+            <%= current_user.name %>
+            </a>
+          </div>  
+          <div class="dropdown">
+            <li>
+              <i class="far fa-address-card"></i>
+              <%= link_to "マイページ", user_path(current_user) %>
+            </li>
+            <li>
+              <i class="fas fa-sign-out-alt"></i>
+              <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li> 
+          </div>
+        <% else %>
+          <div class="nav-item ">
+            <%= link_to "新規登録", signup_path, class: 'btn btn-primary' %>
+          </div>
+          <div class="nav-item">
+            <%= link_to "ログイン", login_path, class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </nav>
 </header>
