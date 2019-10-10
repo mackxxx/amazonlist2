@@ -56,3 +56,4 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem "rubyzip", ">= 1.3.0"
 gem 'amazon-ecs'
+gem 'dotenv-rails'
