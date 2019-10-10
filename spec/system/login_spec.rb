@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Login", type: :system do
-
   context "ログインをクリック" do
     it "ログインページに遷移" do
       visit root_path
@@ -11,7 +10,7 @@ RSpec.describe "Login", type: :system do
   end
 
   describe "ログイン" do
-    let(:user) { create:user }
+    let(:user) { create :user }
     
     before do
       visit login_path

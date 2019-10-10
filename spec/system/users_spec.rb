@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :system do
-  
   let(:user) { build :user }
   
   context "新規登録をクリック" do

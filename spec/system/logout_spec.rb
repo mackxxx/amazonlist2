@@ -1,9 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Logout", type: :system do
-
   describe "ログアウト" do
-    let(:user) { create:user }
+    let(:user) { create :user }
     
     before do 
       visit login_path
