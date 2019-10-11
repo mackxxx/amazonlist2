@@ -30,6 +30,10 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-rails'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'pry-byebug'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -55,5 +59,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem "rubyzip", ">= 1.3.0"
+gem 'nokogiri'
 gem 'amazon-ecs'
 gem 'dotenv-rails'
