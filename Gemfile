@@ -55,4 +55,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem "rubyzip", ">= 1.3.0"
-gem 'amazon-ecs'
