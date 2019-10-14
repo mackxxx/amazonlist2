@@ -33,26 +33,26 @@ footer {
   position: relative;
 }
 
-.divider-text {
-  position: relative;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
+.search {
+  margin-bottom: 20px;
 }
 
-.divider-text span {
-  padding: 7px;
-  font-size: 12px;
-  position: relative;
-  z-index: 2;
+.item .panel-body {
+  height: 70px;
 }
 
-.divider-text:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  border-bottom: 1px solid #ddd;
-  top: 55%;
-  left: 0;
-  z-index: 1;
+.item .panel-heading {
+  height: 250px;
+}
+
+.item .panel-heading img {
+  height: 100%;
+  max-width: 100%;
+}
+
+p.item-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
