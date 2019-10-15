@@ -38,12 +38,12 @@ footer {
 }
 
 .item {
-  .panel-body {
-    height: 70px;
+  .card-body {
+    height: 100px;
   }
 
-  .panel-heading {
-    height: 250px;
+  .card-heading {
+    height: 200px;
 
     img {
       height: 100%;
@@ -57,4 +57,5 @@ p.item-title {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+  height: 3.0em;
 }
