@@ -4,7 +4,7 @@
 
 
 body {
-  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
+  background: url("/images/cover-bg.jpg") center (center / cover) no-repeat fixed;
 }
 
 footer {
@@ -12,42 +12,44 @@ footer {
 }
 
 .navbar {
-  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
-}
+  background: url("/images/cover-bg.jpg") center (center / cover) no-repeat fixed;
 
-.navbar img {
-  margin-top: 5px;
-  height: 40px;
+  img {
+    margin-top: 5px;
+    height: 40px;
+  }
 }
 
 .cover .cover-inner {
   height: 100%;
   margin: auto;
   display: table;
-}
 
-.cover .cover-inner .cover-contents {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  position: relative;
+  .cover-contents {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+  }
 }
 
 .search {
   margin-bottom: 20px;
 }
 
-.item .panel-body {
-  height: 70px;
-}
+.item {
+  .panel-body {
+    height: 70px;
+  }
 
-.item .panel-heading {
-  height: 250px;
-}
+  .panel-heading {
+    height: 250px;
 
-.item .panel-heading img {
-  height: 100%;
-  max-width: 100%;
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
 p.item-title {
