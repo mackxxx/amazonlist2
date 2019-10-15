@@ -3,7 +3,7 @@
     <div class="text-center">
       <%= form_with scope: :item, url:new_item_path, method: :get, class: 'form-inline', local: true do |f| %>
         <div class="form-group">
-          <%= text_field_tag :keyword, @keyword, minlength:2, class: 'form-control input-lg', placeholder: "キーワードを入力", size: 70 %>
+          <%= text_field_tag :keyword, @keyword, minlength:2, class: 'form-control input-lg', placeholder: "キーワードを2文字以上入力", size: 60 %>
         </div>
         <%= submit_tag '商品を検索', class: 'btn btn-success btn-lg' %>
       <% end %>
