@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'items/new'
   root to: "toppages#index"
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
