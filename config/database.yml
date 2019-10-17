@@ -48,9 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  <<: *default
   database: amazonlist2_production
   username: amazonlist2
   password: <%= ENV['AMAZONLIST2_DATABASE_PASSWORD'] %>
