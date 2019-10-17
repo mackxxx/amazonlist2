@@ -1,5 +1,3 @@
-require "item.rb"
-
 class ItemsController < ApplicationController
   def index
     @items = []
