@@ -1,7 +1,7 @@
 <div class="search">
   <div class="row">
     <div class="text-center">
-      <%= form_with scope: :item, url:new_item_path, method: :get, class: 'form-inline', local: true do |f| %>
+      <%= form_with scope: :item, url:items_path, method: :get, class: 'form-inline', local: true do |f| %>
         <div class="form-group">
           <%= text_field_tag :keyword, @keyword, minlength:2, class: 'form-control input-lg', placeholder: "キーワードを2文字以上入力", size: 60 %>
         </div>

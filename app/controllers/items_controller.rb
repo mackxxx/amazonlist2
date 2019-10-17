@@ -1,5 +1,7 @@
+require "item.rb"
+
 class ItemsController < ApplicationController
-  def new
+  def index
     @items = []
 
     @keyword = params[:keyword]
@@ -16,19 +18,4 @@ class ItemsController < ApplicationController
       end
     end
   end
-
-  private
-    def read(result)
-      code = result['itemCode']
-      name = result['itemName']
-      url = result['itemUrl']
-      image_url = result['mediumImageUrls'].first.gsub('?_ex=128x128', '')
-
-      {
-        code: code,
-        name: name,
-        url: url,
-        image_url: image_url,
-      }
-    end
-  end
+end
