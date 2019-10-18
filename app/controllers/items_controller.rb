@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
   def index
-    @items = []
-
     @keyword = params[:keyword]
     if @keyword.present?
       results = RakutenWebService::Ichiba::Item.search({
@@ -10,9 +8,8 @@ class ItemsController < ApplicationController
         hits: 20,
       })
 
-      results.each do |result|
+      @items = results.map do |result| 
         item = Item.initialize_by_json(result)
-        @items << item
       end
     end
   end
