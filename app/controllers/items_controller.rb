@@ -11,7 +11,7 @@ class ItemsController < ApplicationController
       })
 
       results.each do |result|
-        item = Item.new(read(result))
+        item = Item.initialize_by_json(result)
         @items << item
       end
     end

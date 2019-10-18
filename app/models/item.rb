@@ -4,17 +4,12 @@ class Item < ApplicationRecord
   validates :url, presence: true, length: { maximum: 255 }
   validates :image_url, presence: true, length: { maximum: 255 }
 
-  def read(result)
-    code = result['itemCode']
-    name = result['itemName']
-    url = result['itemUrl']
-    image_url = result['mediumImageUrls'].first.gsub('?_ex=128x128', '')
-
-    {
-      code: code,
-      name: name,
-      url: url,
-      image_url: image_url,
-    }
+  def self.initialize_by_json(json)
+    new(
+      code: json['itemCode'],
+      name: json['itemName'],
+      url: json['itemUrl'],
+      image_url: json['mediumImageUrls'].first.gsub('?_ex=128x128', '')
+    )
   end
 end
