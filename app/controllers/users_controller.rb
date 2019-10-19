@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, only: [:new, :create, :update, :edit] 
+  skip_before_action :authenticate_user, only: [:index, :show, :new, :create, :update, :edit] 
   
+  def index
+    @users = User.all.page(params[:page])
+  end
+
   def show
     @user = User.find(params[:id])
     @items = @user.items.uniq
