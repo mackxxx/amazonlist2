@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_13_102051) do
+ActiveRecord::Schema.define(version: 2019_10_19_104022) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "code"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2019_10_13_102051) do
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ownerships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "type"
+    t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["item_id"], name: "index_ownerships_on_item_id"
+    t.index ["user_id"], name: "index_ownerships_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -31,4 +41,6 @@ ActiveRecord::Schema.define(version: 2019_10_13_102051) do
     t.index ["name"], name: "index_users_on_name", unique: true
   end
 
+  add_foreign_key "ownerships", "items"
+  add_foreign_key "ownerships", "users"
 end
