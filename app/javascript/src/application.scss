@@ -4,7 +4,7 @@
 
 
 body {
-  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
+  background: url("/images/cover-bg.jpg") center (center / cover) no-repeat fixed;
 }
 
 footer {
@@ -12,48 +12,50 @@ footer {
 }
 
 .navbar {
-  background: url("/images/cover-bg.jpg") center center / cover no-repeat fixed;
-}
+  background: url("/images/cover-bg.jpg") center (center / cover) no-repeat fixed;
 
-.navbar img {
-  margin-top: 5px;
-  height: 40px;
+  img {
+    margin-top: 5px;
+    height: 40px;
+  }
 }
 
 .cover .cover-inner {
   height: 100%;
   margin: auto;
   display: table;
+
+  .cover-contents {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+  }
 }
 
-.cover .cover-inner .cover-contents {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  position: relative;
+.search {
+  margin-bottom: 20px;
 }
 
-.divider-text {
-  position: relative;
-  text-align: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
+.item {
+  .card-body {
+    height: 100px;
+  }
+
+  .card-heading {
+    height: 200px;
+
+    img {
+      height: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
-.divider-text span {
-  padding: 7px;
-  font-size: 12px;
-  position: relative;
-  z-index: 2;
+p.item-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  height: 3.0em;
 }
-
-.divider-text:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  border-bottom: 1px solid #ddd;
-  top: 55%;
-  left: 0;
-  z-index: 1;
-}@import "~bootstrap/scss/bootstrap";
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";

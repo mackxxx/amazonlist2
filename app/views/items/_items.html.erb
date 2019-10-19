@@ -1,0 +1,16 @@
+<% if items %>
+  <div class="justify-content-center">
+    <% items.each do |item| %>
+      <div class="item">
+        <div class="card">
+          <div class="card-heading text-center">
+            <img src="<%= item.image_url %>" alt="">
+          </div>
+          <div class="card-body">
+            <p class="item-title"><%= item.name %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -8,11 +8,11 @@
       <div class="navbar-nav">
         <% if logged_in? %>
           <li>
-          　<i class="fas fa-arrow-alt-circle-down"></i>
-            <a href="#">アイテムを追加</a>　　　　　　　
+            <i class="fas fa-arrow-alt-circle-down"></i>
+            <%= link_to "アイテムを追加", items_path %>
           </li>
           <li>
-          　<i class="fas fa-users"></i>
+            <i class="fas fa-users"></i>
             <a href="#">ユーザ一覧</a>
           </li>
           <li>
