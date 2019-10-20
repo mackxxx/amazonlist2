@@ -10,7 +10,6 @@ class Item < ApplicationRecord
   has_many :desires
   has_many :desire_users, through: :desires, source: :user
 
-
   def self.initialize_by_json(json)
     new(
       code: json['itemCode'],
