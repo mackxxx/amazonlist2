@@ -9,7 +9,7 @@ class OwnershipsController < ApplicationController
 
     if params[:type] == 'Want'
       current_user.want(@item)
-      flash[:success] = '商品を Want しました。'
+      flash[:success] = '商品を今欲しい に入れました。'
     end
     
     if params[:type] == 'Desire'
@@ -24,7 +24,7 @@ class OwnershipsController < ApplicationController
     @item = Item.find(params[:item_id])
     if params[:type] == 'Want'
       current_user.unwant(@item) 
-      flash[:success] = '商品の Want を解除しました。'
+      flash[:success] = '今欲しい を解除しました。'
     end
 
     if params[:type] == 'Desire'
