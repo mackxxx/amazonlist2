@@ -4,7 +4,7 @@ class OwnershipsController < ApplicationController
     unless @item.persisted?
       results = RakutenWebService::Ichiba::Item.search(itemCode: @item.code)
       @item = Item.initialize_by_json(results.first)
-      @item.save
+      @item.save!
     end
 
     if params[:type] == 'Want'
@@ -22,6 +22,7 @@ class OwnershipsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:item_id])
+    
     if params[:type] == 'Want'
       current_user.unwant(@item) 
       flash[:success] = '今欲しい を解除しました。'
