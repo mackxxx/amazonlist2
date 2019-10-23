@@ -7,8 +7,6 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false }
   validates :password, presence: true, length:{ minimum: 6 }, allow_nil: true
   has_secure_password
-  has_many :ownerships
-  has_many :items, through: :ownerships
   has_many :wants
   has_many :want_items, through: :wants, source: :item
   has_many :desires
