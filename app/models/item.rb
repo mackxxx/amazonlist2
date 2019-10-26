@@ -10,12 +10,11 @@ class Item < ApplicationRecord
   has_many :desires
   has_many :desire_users, through: :desires, source: :user
 
-  def self.initialize_by_json(json)
-    new(
-      code: json['itemCode'],
-      name: json['itemName'],
-      url: json['itemUrl'],
-      image_url: json['mediumImageUrls'].first.gsub('?_ex=128x128', '')
-    )
+  def self.find_or_initialize_by_json(json)
+    find_or_initialize_by(code: json['itemCode']) do |item|
+      item.name = json["itemName"]
+      item.url = json["itemUrl"]
+      item.image_url = json['mediumImageUrls'].first.gsub('?_ex=128x128', '')
+    end
   end
 end
