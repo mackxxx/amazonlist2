@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, only: [:index, :show, :new, :create, :update, :edit] 
+  skip_before_action :authenticate_user, only: [:index, :show, :new, :create, :edit, :update] 
   
   def index
     @users = User.all.page(params[:page])
@@ -27,10 +27,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @user = User.find(params[:id])
   end
 
-  def edit
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to @user, success: "編集に成功しました。"
+    else
+      flash.now[:danger] = "ユーザの編集に失敗しました。"
+      render :edit
+    end
   end
 
   private
