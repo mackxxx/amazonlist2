@@ -1,8 +1,15 @@
 class UsersController < ApplicationController
-  skip_before_action :authenticate_user, only: [:new, :create, :update, :edit] 
+  skip_before_action :authenticate_user, only: [:index, :show, :new, :create, :edit, :update] 
   
+  def index
+    @users = User.all.page(params[:page])
+  end
+
   def show
     @user = User.find(params[:id])
+    @items = @user.items.uniq
+    @count_want = @user.want_items.count
+    @count_desire = @user.desire_items.count
   end
 
   def new
@@ -20,10 +27,18 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def edit
+    @user = User.find(current_user.id)
   end
 
-  def edit
+  def update
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
+      redirect_to @user, success: "編集に成功しました。"
+    else
+      flash.now[:danger] = "ユーザの編集に失敗しました。"
+      render :edit
+    end
   end
 
   private

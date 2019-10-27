@@ -5,4 +5,21 @@
   <div class="name text-center">
     <h1><%= @user.name %></h1>
   </div>
+  <div class="status text-center">
+    <ul>
+      <li>
+        <div class="status-label">今欲しい</div>
+        <div id="want_count" class="status-value">
+          <%= @count_want %>
+        </div>
+      </li>
+      <li>
+        <div class="status-label">あとで欲しい</div>
+        <div id="desire_count" class="status-value">
+          <%= @count_desire %>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
+<%= render 'items/items', items: @items %>

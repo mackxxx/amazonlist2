@@ -39,7 +39,7 @@ footer {
 
 .item {
   .card-body {
-    height: 100px;
+    height: 150px;
   }
 
   .card-heading {
@@ -58,4 +58,43 @@ p.item-title {
   -webkit-line-clamp: 2;
   overflow: hidden;
   height: 3.0em;
+}
+
+.user-profile {
+  .name {
+    margin-bottom: 20px;
+
+    h1 {
+      text-shadow: 1px 1px 1px #fff;
+      font-weight: bold;
+    }
+  }
+
+  .status ul {
+    margin: 0 auto 10px;
+    padding: 0;
+    display: table;
+
+    li {
+      width: 120px;
+      padding: 5px 0;
+      border-right: 1px solid #ddd;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      color: #777;
+
+      &:last-child {
+        border: none;
+      }
+
+      .status-label {
+        font-size: 12px;
+      }
+
+      .status-value {
+        font-size: 18px;
+      }
+    }
+  }
 }

@@ -60,3 +60,4 @@ gem 'jquery-rails'
 gem "rubyzip", ">= 1.3.0"
 gem 'rakuten_web_service', '~> 1.12.0' 
 gem 'dotenv-rails'
+gem 'kaminari'
