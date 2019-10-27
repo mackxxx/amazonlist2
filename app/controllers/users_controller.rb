@@ -32,8 +32,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
+    @user = User.find(current_user.id)
+    if @user.update(user_params)
       redirect_to @user, success: "編集に成功しました。"
     else
       flash.now[:danger] = "ユーザの編集に失敗しました。"
