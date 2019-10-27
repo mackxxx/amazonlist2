@@ -3,7 +3,7 @@ class OwnershipsController < ApplicationController
     @item = Item.find_or_initialize_by(code: params[:item_code])
     unless @item.persisted?
       results = RakutenWebService::Ichiba::Item.search(itemCode: @item.code)
-      @item = Item.initialize_by_json(results.first)
+      @item = Item.find_or_initialize_by_json(results.first)
       @item.save!
     end
 
