@@ -1,0 +1,26 @@
+<% if items.present? %>
+  <div class="justify-content-center">
+    <% items.each do |item| %>
+      <div class="item">
+        <div class="card">
+          <div class="card-heading text-center">
+            <img src="<%= item.image_url %>" alt="">
+          </div>
+          <div class="card-body">
+            <% if item.persisted? %>
+              <p class="item-title"><%= link_to item.name, item %></p>
+            <% else %>
+              <p class="item-title"><%= item.name %></p>
+            <% end %>
+            <div class="buttons text-center">
+              <% if logged_in? %>
+                <%= render 'ownerships/want_button', item: item %>
+                <%= render 'ownerships/desire_button', item: item %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

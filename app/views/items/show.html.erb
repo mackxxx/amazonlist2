@@ -1,0 +1,41 @@
+<div class="justify-content-center">
+  <div class="item">
+    <div class="card">
+      <div class="card-heading text-center">
+        <img src="<%= @item.image_url %>" alt="">
+      </div>
+      <div class="card-body">
+        <p class="item-title"><%= @item.name %></p>
+        <div class="buttons text-center">
+          <%= render 'ownerships/want_button', item: @item %>
+          <%= render 'ownerships/desire_button', item: @item %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="want-users">
+    <div class="card">
+      <div class="card-heading text-center">
+        Wantしたユーザ
+      </div>
+      <div class="card-body">
+        <% @want_users.each do |user| %>
+          <%= link_to user.name, user_path(user) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="desire-users">
+    <div class="card">
+      <div class="card-heading text-center">
+        Desireしたユーザ
+      </div>
+      <div class="card-body">
+        <% @desire_users.each do |user| %>
+          <%= link_to user.name, user_path(user) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <p class="text-center"><%= link_to '楽天詳細ページ', @item.url, target: '_blank' %></p>
+</div>

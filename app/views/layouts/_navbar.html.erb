@@ -1,20 +1,50 @@
 <header>
-  <nav class="navbar navbar-default navbar-static-top">
-    <div class="container">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-left" href="/"><img src="/images/logo.png" alt="RakutenList"></a>
-      </div>
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to '新規登録', signup_path %></li>
-        <li><a href="#">ログイン</a></li>
-      </ul>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="ナビゲーションの切替">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-left" href="/"><img src="/images/logo.png" alt="AmazonList"></a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav">
+        <% if logged_in? %>
+          <li>
+            <i class="fas fa-arrow-alt-circle-down"></i>
+            <%= link_to "アイテムを追加", items_path %>
+          </li>
+          <li>
+            <i class="fas fa-users"></i>
+            <%= link_to "ユーザ一覧", users_path %>
+          </li>
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="gravatar">
+                <img src="<%= gravatar_url(current_user, size: 20) %>" alt="" class="img-circle">
+              </span>
+            <%= current_user.name %>
+            </a>
+          </div>  
+          <div class="dropdown">
+            <li>
+              <i class="far fa-address-card"></i>
+              <%= link_to "マイページ", user_path(current_user) %>
+            </li>
+            <li>
+              <i class="fas fa-pen-square"></i>
+              <%= link_to "ユーザ編集", edit_user_path(current_user) %>
+            </li>
+            <li>
+              <i class="fas fa-sign-out-alt"></i>
+              <%= link_to "ログアウト", logout_path, method: :delete %>
+            </li> 
+          </div>
+        <% else %>
+          <div class="nav-item ">
+            <%= link_to "新規登録", signup_path, class: 'btn btn-primary' %>
+          </div>
+          <div class="nav-item">
+            <%= link_to "ログイン", login_path, class: 'btn btn-primary' %>
+          </div>
+        <% end %>
       </div>
     </div>
   </nav>
