@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   resources :users, only: [:index, :show, :create, :edit, :update] 
   resources :items, only: [:show, :index]
-  resources :ownerships, only: [:create, :destroy]
+  resources :ownerships, only: [:create, :destroy], param: :item_code
 end

@@ -1,6 +1,5 @@
 <% if current_user.desire?(item) %>
   <%= form_with url:ownership_path(item.id), method: :delete, local: true do |f| %>
-    <%= hidden_field_tag :item_id, item.id %>
     <%= hidden_field_tag :type, 'Desire' %>
     <%= submit_tag 'まだいらない', class: 'btn btn-danger' %>
   <% end %>
