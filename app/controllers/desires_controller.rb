@@ -7,7 +7,6 @@ class DesiresController < ApplicationController
       @item.save!
     end
 
-    
     if current_user.desire(@item)
       flash[:success] = '商品を後で欲しい に入れました。'
     end

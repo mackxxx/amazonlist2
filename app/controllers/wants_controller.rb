@@ -8,7 +8,7 @@ class WantsController < ApplicationController
     end
 
     if current_user.want(@item)
-      flash[:success] = '商品を今欲しい に入れました。'
+　　  flash[:success] = '商品を今欲しい に入れました。'
     end
     
     redirect_back(fallback_location: root_path)
