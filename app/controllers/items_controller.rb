@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find_by(params[:id])
+    @item = Item.find_by(params[:item_code])
     @want_users = @item.want_users
     @desire_users = @item.desire_users
   end

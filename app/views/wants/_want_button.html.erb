@@ -1,5 +1,5 @@
-<% if current_user.want?(item) %>
-  <%= link_to 'いらない', item_want_path(item.code), class: 'btn btn-danger', method: :delete %>
+<% if current_user.want?(item.code) %>
+  <%= link_to 'いらない', item_want_path, class: 'btn btn-danger', method: :delete %>
 <% else %>
   <%= link_to '今欲しい', item_wants_path(item.code), class: 'btn btn-primary', method: :post %>
 <% end %>
