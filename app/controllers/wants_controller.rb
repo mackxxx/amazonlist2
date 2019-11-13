@@ -7,20 +7,15 @@ class WantsController < ApplicationController
       @item.save!
     end
 
-    if current_user.want(@item)
-　　  flash[:success] = '商品を今欲しい に入れました。'
-    end
-    
+    current_user.want(@item)
+      flash[:success] = '商品を今欲しい に入れました。'
     redirect_back(fallback_location: root_path)
   end
 
   def destroy
-    @item = Item.find(params[:item_id])
-    
-    if current_user.unwant(@item) 
+    @item = Item.find_by(code: params[:item_code])
+    current_user.unwant(@item) 
       flash[:success] = '今欲しい を解除しました。'
-    end
-  
     redirect_back(fallback_location: root_path)
   end
 end
