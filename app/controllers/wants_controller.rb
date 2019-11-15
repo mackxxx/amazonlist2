@@ -13,7 +13,7 @@ class WantsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find_by(code: params[:item_code])
+    @item = Item.find(params[:item_code])
     current_user.unwant(@item) 
       flash[:success] = '今欲しい を解除しました。'
     redirect_back(fallback_location: root_path)
