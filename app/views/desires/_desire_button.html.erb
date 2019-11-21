@@ -1,5 +1,5 @@
 <% if current_user.desire?(item) %>
-  <%= link_to 'まだいらない', item_desire_path(item.code), class: 'btn btn-danger', method: :delete %>
+  <%= link_to 'まだいらない', item_desire_path(item.id, item.code), class: 'btn btn-danger', method: :delete %>
 <% else %> 
   <%= link_to '後で欲しい', item_desires_path(item.code), class: 'btn btn-primary', method: :post %>
 <% end %>
