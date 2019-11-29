@@ -8,7 +8,7 @@
           </div>
           <div class="card-body">
             <% if item.persisted? %>
-              <p class="item-title"><%= link_to item.name, item %></p>
+              <p class="item-title"><%= link_to item.name, item_path(item.code) %></p>
             <% else %>
               <p class="item-title"><%= item.name %></p>
             <% end %>
