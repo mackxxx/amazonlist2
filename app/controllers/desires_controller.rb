@@ -8,8 +8,7 @@ class DesiresController < ApplicationController
     end
 
     current_user.desire(@item)
-      flash[:success] = '商品を後で欲しい に入れました。'    
-    redirect_back(fallback_location: root_path)
+　  redirect_back follback_location: root_path, success: '商品を後で欲しい に入れました。'
   end
 
   def destroy
