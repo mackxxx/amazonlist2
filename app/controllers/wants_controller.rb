@@ -8,7 +8,7 @@ class WantsController < ApplicationController
     end
 
     current_user.want(@item)
-    redirect_back follback_location: root_path, success: '商品を今欲しい に入れました。'
+    redirect_back fallback_location: root_path, success: '商品を今欲しい に入れました。'
   end
 
   def destroy
