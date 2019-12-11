@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "Wants", type: :system do
-  let(:item) { create :item }
   let(:user) { create :user }
+  let(:item) { create :item }
   
   before do
     login_user
