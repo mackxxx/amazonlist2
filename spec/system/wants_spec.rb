@@ -1,11 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe "Wants", type: :system do
-  let(:user) { create :user }
   let(:item) { create :item }
+  let(:user) { create :user }
   
-  include LoginSupport
-  
+  before do
+    login_user
+    click_on "アイテムを追加"
+    fill_in "キーワードを2文字以上入力", with: item.name
+    click_on "商品を検索"
+  end
+
   describe "Wantボタン" do
     context "ボタンを初めて押す場合" do
       it "今欲しい ボタンが押せる" do
