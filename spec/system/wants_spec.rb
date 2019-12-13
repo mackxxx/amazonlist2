@@ -5,7 +5,7 @@ RSpec.describe "Wants", type: :system do
   let(:item) { create :item }
   
   before do
-    login_user
+    login_user(user)
     click_on "アイテムを追加"
     fill_in "キーワードを2文字以上入力", with: item.name
     click_on "商品を検索"

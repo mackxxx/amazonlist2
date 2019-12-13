@@ -13,7 +13,7 @@ RSpec.describe "Login", type: :system do
     let(:user) { create :user }
     
     before do
-      login_user
+      login_user(user)
     end
     
     context "正しい値を入力した場合" do

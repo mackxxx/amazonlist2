@@ -1,5 +1,5 @@
 module LoginSupport
-  def login_user
+  def login_user(user)
     visit login_path
     fill_in "メールアドレス", with: user.email
     fill_in "パスワード", with: user.password
