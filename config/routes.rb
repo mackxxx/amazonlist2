@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'rankings/want'
   root to: "toppages#index"
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
