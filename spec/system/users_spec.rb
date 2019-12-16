@@ -11,10 +11,10 @@ RSpec.describe "Users", type: :system do
     end
   end
  
-  context "AmazonListを始めるをクリック" do
+  context "商品リストを始めるをクリック" do
     it "新規登録ページに遷移" do
       visit root_path
-      click_on "AmazonListを始める"
+      click_on "商品リストを始める"
       expect(page).to have_content("新規登録")
     end
   end
