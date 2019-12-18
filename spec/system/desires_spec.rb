@@ -23,7 +23,7 @@ RSpec.describe "Desires", type: :system do
       it "まだいらない ボタンが押せる" do
         click_on "後で欲しい", match: :first
         click_on "まだいらない", match: :first
-        expect(page).to have_content "後で欲しい を解除しました。"
+        expect(page).to have_content "1位"
       end
     end
   end
