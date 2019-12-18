@@ -1,6 +1,6 @@
 <h1>Desireランキング</h1>
 <% if @items.present? %>
-  <% @items.each_with_index do |item, index| %>
+  <% @items.each.with_index(1) do |item, index| %>
     <div class="item">
       <div class="card"> 
         <div class="card-heading text-center">
@@ -14,7 +14,7 @@
             <% end %>
           </div>
           <div class="footer">
-            <p class="text-center"><%= index+1 %>位: <%= @ranking_counts[item.id] %> Desires</p>
+            <p class="text-center"><%= index %>位: <%= @ranking_counts[item.id] %> Desires</p>
           </div>
         </div>
       </div>
