@@ -17,6 +17,8 @@ RSpec.describe "Desires", type: :system do
         click_on "後で欲しい", match: :first
         click_on "Desireランキング"
         expect(page).to have_content "1位: 1 Desires"
+        click_on "Ruby", match: :first
+        expect(current_path) == "http://localhost:3000/items/book:18852922"
       end
     end
     

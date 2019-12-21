@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "Wants", type: :system do
-  let(:user) { create :user }
+let(:user) { create :user }++
   let(:item) { create :item }
   
   before do
@@ -17,6 +17,8 @@ RSpec.describe "Wants", type: :system do
         click_on "今欲しい", match: :first
         click_on "Wantランキング"
         expect(page).to have_content "1位: 1 Wants"
+        click_on "Ruby", match: :first
+        expect(current_path) == "http://localhost:3000/items/book:18852922"
       end
     end
   
@@ -24,7 +26,7 @@ RSpec.describe "Wants", type: :system do
       it "ランキングが表示されない" do
         click_on "今欲しい", match: :first
         click_on "いらない", match: :first
-        click_on "Wantランキング"
+        click_on "Wantランキング"``
         expect(page).not_to have_content "1位: 1 Wants"
       end
     end
