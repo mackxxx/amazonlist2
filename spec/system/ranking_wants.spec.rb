@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "Wants", type: :system do
-  
   let(:user) { create :user }
   let(:item) { create :item }
   let(:other_user) { create :other_user }
