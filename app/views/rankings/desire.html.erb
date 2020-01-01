@@ -1,5 +1,6 @@
 <h1>Desireランキング</h1>
 <% if @items.present? %>
+  <div class="test-for-desire">
   <% @items.each.with_index(1) do |item, index| %>
     <div class="item">
       <div class="card"> 
@@ -7,7 +8,7 @@
           <img src="<%= item.image_url %>" alt="">
         </div>
         <div class="card-body">
-        <p class="item-title"><%= link_to item.name, item_path(item.code) %></p>
+          <p class="item-title"><%= link_to item.name, item_path(item.code) %></p>
           <div class="buttons text-center">
             <% if logged_in? %>
               <%= render 'desires/desire_button', item: item %>
