@@ -1,4 +1,4 @@
-class OmniauthCallbacksController < ApplicationController
+class OmniauthController < ApplicationController
   skip_before_action :authenticate_user, only: [:callback]    
     
   def callback
