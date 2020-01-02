@@ -4,7 +4,7 @@ class OmniauthController < ApplicationController
   def callback
     auth = request.env['omniauth.auth']
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
-      session[:user_id] = user.id
+      log_in user
       redirect_to user, success: "ログインしました。"
     end
   end
