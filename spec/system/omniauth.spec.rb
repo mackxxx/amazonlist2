@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "UserFeature" do
+describe "Omniauth" do
   before do
     OmniAuth.config.mock_auth[:twitter] = nil
     Rails.application.env_config['omniauth.auth'] = twitter_mock
