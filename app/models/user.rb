@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  before_save { self.email = email.downcase }
+  before_save :downcase_email, unless: :uid?
   validates :name, presence: true, length: { maximum: 50 }, unless: :uid?
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 },
@@ -7,13 +7,17 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false },
             unless: :uid?
   validates :password, presence: true, length:{ minimum: 6 }, allow_nil: true, unless: :uid?
-  has_secure_password
+  has_secure_password validations: false
   has_many :ownerships
   has_many :items, through: :ownerships
   has_many :wants
   has_many :want_items, through: :wants, source: :item
   has_many :desires
   has_many :desire_items, through: :desires, source: :item
+  
+  def downcase_email
+    self.email = email.downcase
+  end
   
   def want(item)
     self.wants.find_or_create_by(item_id: item.id)

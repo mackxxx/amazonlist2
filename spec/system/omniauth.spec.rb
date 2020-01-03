@@ -9,6 +9,13 @@ describe "UserFeature" do
   end
   
   it "ログインできる" do
-      expect(page).to have_content "Twitterでログインしました。"
+    expect(page).to have_content "Twitterでログインしました。"
+    expect(page).to have_content "アイテムを追加"
+  end
+  
+  it "ログアウトできる" do
+    click_on 'ログアウト'
+    expect(page).to have_content "ログアウトしました。"
+    expect(page).to_not have_content "アイテムを追加"
   end
 end
