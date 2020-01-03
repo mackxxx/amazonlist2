@@ -5,6 +5,6 @@ class OmniauthController < ApplicationController
     auth = request.env['omniauth.auth']
       user = User.find_or_create_from_auth(request.env['omniauth.auth'])
       log_in user
-      redirect_to user, success: "ログインしました。"
+      redirect_to user, success: "Twitterでログインしました。"
     end
   end
