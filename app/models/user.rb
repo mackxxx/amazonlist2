@@ -15,6 +15,10 @@ class User < ApplicationRecord
   has_many :desires
   has_many :desire_items, through: :desires, source: :item
   
+  def password_skip
+    provider.blank?
+  end
+  
   def downcase_email
     self.email = email.downcase
   end
