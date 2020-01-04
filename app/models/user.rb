@@ -7,7 +7,7 @@ class User < ApplicationRecord
             uniqueness: { case_sensitive: false },
             unless: :uid?
   validates :password, presence: true, length:{ minimum: 6 }, allow_nil: true, unless: :uid?
-  has_secure_password validations: false
+  has_secure_password
   has_many :ownerships
   has_many :items, through: :ownerships
   has_many :wants
