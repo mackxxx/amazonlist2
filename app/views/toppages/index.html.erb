@@ -5,6 +5,7 @@
         <h1>探しものは何ですか</h1>
         <% unless logged_in? %>
           <%= link_to "商品リストを始める", signup_path, class: "btn btn-outline-primary" %>
+          <%= link_to "Twitterでログイン", "auth/twitter" %>
         <% end %>
       </div>
     </div>
