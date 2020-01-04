@@ -6,7 +6,7 @@ class User < ApplicationRecord
             format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false },
             unless: :uid?
-  validates :password, confirmation: true, presence: true, length:{ minimum: 6 }, allow_nil: true, unless: :uid?
+  validates :password, confirmation: true, presence: true, length:{ minimum: 6 }, unless: :uid?
   has_secure_password validations: false
   has_many :ownerships
   has_many :items, through: :ownerships
