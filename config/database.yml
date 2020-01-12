@@ -19,14 +19,14 @@ default: &default
 
 development:
   <<: *default
-  database: amazonlist2_development
+  database: rakutenlist2_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: amazonlist2_test
+  database: rakutenlist2_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: amazonlist2_production
-  username: amazonlist2
-  password: <%= ENV['AMAZONLIST2_DATABASE_PASSWORD'] %>
+  database: rakutenlist2_production
+  username: rakutenlist2
+  password: <%= ENV['rakutenlist2_DATABASE_PASSWORD'] %>

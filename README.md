@@ -1,24 +1,28 @@
-# README
+# RakutenList
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+楽天APIを利用した楽天商品を検索し保存できるアプリです。
 
-Things you may want to cover:
+# 主な機能
 
-* Ruby version
+新規ユーザ登録機能
 
-* System dependencies
+ログイン機能
 
-* Configuration
+OAuthを用いたtwitterでのログイン機能
 
-* Database creation
+楽天Apiを使用した商品の検索機能
 
-* Database initialization
+商品の今欲しい・後で欲しいの追加・削除機能
 
-* How to run the test suite
+商品の今欲しい・後でほしいランキング表示機能
 
-* Services (job queues, cache servers, search engines, etc.)
+# 使用技術
 
-* Deployment instructions
+ruby 2.6.4
+Rails 6.0.0
+MySQL
+Heroku
 
-* ...
+# テストコード
+
+RSpec
