@@ -19,8 +19,11 @@ OAuthを用いたtwitterでのログイン機能
 # 使用技術
 
 ruby 2.6.4
+
 Rails 6.0.0
+
 MySQL
+
 Heroku
 
 # テストコード
