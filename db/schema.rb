@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_121006) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_ownerships_on_item_id"
+    t.index ["user_id", "item_id", "type"], name: "index_ownerships_on_user_id_and_item_id_and_type", unique: true
     t.index ["user_id"], name: "index_ownerships_on_user_id"
   end
 

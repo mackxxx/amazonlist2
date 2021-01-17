@@ -8,8 +8,8 @@ class ItemsController < ApplicationController
         hits: 20,
       })
 
-      @items = results.map do |result| 
-        item = Item.find_or_initialize_by_json(result)
+      @items = results.map do |each| 
+        item = Item.find_or_initialize_by_json(each)
       end
     end
   end
